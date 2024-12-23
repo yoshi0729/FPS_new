@@ -75,7 +75,7 @@ private void ProcessInput()
         transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
     }
 
-    if (Input.GetKeyDown(KeyCode.Space) && grounded && ReadyToJump)
+    if (Input.GetKeyDown(KeyCode.Space) /*&& grounded*/ && ReadyToJump)
         {
             ReadyToJump = false;
 
@@ -143,7 +143,7 @@ private void ProcessInput()
      private void StateHandler()
     {
         //左シフトを押しているかつ地面と接している場合は、ステートをsprintingにして走る
-        if (Input.GetKey(KeyCode.LeftShift) && grounded)
+        if (Input.GetKey(KeyCode.LeftShift) /*&& grounded*/)
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
